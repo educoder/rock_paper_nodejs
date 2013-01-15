@@ -39,7 +39,7 @@ Arduino.prototype.detectSerialport = function () {
     console.log("");
     this.serialportDev = "/dev/"+arduinoDev;
   } else {
-    console.error("No Arduino dev found. Please make sure it is plugged in or hardcode a SERIALPORT value in "+__filename+".");
+    console.error(color.redBright("!!! NO Arduino DEVICE FOUND!!!\nPlease make sure your Arduino is plugged in and has you rock_paper_arduino sketch uploaded."));
     this.serialportDev = undefined;
   }
 
