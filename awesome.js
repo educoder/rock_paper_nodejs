@@ -81,8 +81,10 @@ RPA.prototype.connectToArduino = function () {
     .on('absent', function () {
       log("You are now absent");
 
-      rpa.chat.leave();
-      rpa.arduino.writeEvent('you_are_absent');
+      if (rpa.chat) {
+        rpa.chat.leave();
+        rpa.arduino.writeEvent('you_are_absent');
+      }
     })
     .on('you_choose', function (weapon) {
       rpa.yourWeapon = weapon;
@@ -122,6 +124,10 @@ RPA.prototype.connectToGroupchat = function () {
     .on('opponent_joined_groupchat', function (jid) {
       rpa.opponent = jid;
       rpa.arduino.writeEvent('opponent_is_present', jid.resource);
+    })
+    .on('opponent_left_groupchat', function (jid) {
+      rpa.opponent = jid;
+      rpa.arduino.writeEvent('opponent_is_absent', jid.resource);
     })
     .on('sail_event', function (sev) {
       var eventType = sev.eventType;
