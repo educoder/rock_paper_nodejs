@@ -3,6 +3,8 @@ Rock Paper Awesome — The Node.js Part
 
 Have a look at ➜ https://github.com/educoder/rock_paper_awesome
 
+### Copyright (C) 2012-2013 [Matt Zukowski](https://github.com/zuk), [Mike Tissenbaum](https://github.com/miketissenbaum) and [Armin Krauss](https://github.com/mackrauss)
+
 # License
 
 ##### GNU GPLv3
